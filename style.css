@@ -725,7 +725,7 @@ blockquote.callout p {
 }
 
 .product-card-img {
-  background: #F9FAFB;
+  background: #FFFFFF;
   aspect-ratio: 16/9;
   display: flex;
   align-items: center;
@@ -736,7 +736,7 @@ blockquote.callout p {
 
 .product-card-img img {
   max-width: 100%;
-  max-height: 100px;
+  max-height: 100%;
   object-fit: contain;
 }
 
