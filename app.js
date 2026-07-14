@@ -8,8 +8,13 @@ const pageTitles = {
   'faq':         'FAQ',
 };
 
+let slideshowIntervals = [];
+
 async function loadPage(page) {
   const area = document.getElementById('content-area');
+
+  slideshowIntervals.forEach(clearInterval);
+  slideshowIntervals = [];
 
   try {
     const res = await fetch(`content/${page}.html`);
@@ -40,8 +45,30 @@ async function loadPage(page) {
   // Init software feature accordion
   if (page === 'software') initFeatureAccordion();
 
+  initSlideshows();
+
   closeSidebar();
   window.scrollTo(0, 0);
+}
+
+function initSlideshows() {
+  document.querySelectorAll('.img-slideshow').forEach(box => {
+    const slides = box.querySelectorAll('.slide');
+    const dots = box.querySelectorAll('.dot');
+    if (slides.length <= 1) return;
+
+    let i = Math.max(0, [...slides].findIndex(s => s.classList.contains('is-active')));
+
+    const id = setInterval(() => {
+      slides[i].classList.remove('is-active');
+      dots[i]?.classList.remove('is-active');
+      i = (i + 1) % slides.length;
+      slides[i].classList.add('is-active');
+      dots[i]?.classList.add('is-active');
+    }, 2800);
+
+    slideshowIntervals.push(id);
+  });
 }
 
 function initFeatureAccordion() {

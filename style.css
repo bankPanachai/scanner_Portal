@@ -202,6 +202,75 @@ strong.highlight {
   margin: 32px 0 8px;
 }
 
+.article-img.is-circle {
+  width: 220px;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 32px auto 8px;
+}
+
+/* ── Auto Slideshow ───────────────────────── */
+.img-slideshow {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 3/2;
+  border-radius: var(--radius);
+  overflow: hidden;
+  background: #F3F4F6;
+  margin: 32px 0 8px;
+}
+
+.img-slideshow .slide {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+.img-slideshow .slide.is-active { opacity: 1; }
+
+.slideshow-dots {
+  position: absolute;
+  bottom: 12px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.slideshow-dots .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(0,0,0,0.25);
+  transition: background 0.2s, width 0.2s;
+}
+
+.slideshow-dots .dot.is-active {
+  background: var(--hp-blue);
+  width: 16px;
+  border-radius: 3px;
+}
+
+.img-circle-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin: 32px 0 8px;
+}
+
+.img-circle-row .article-img.is-circle {
+  width: 110px;
+  height: 110px;
+  margin: 0;
+}
+
 .article-img-placeholder {
   width: 100%;
   aspect-ratio: 16/9;
@@ -286,10 +355,6 @@ blockquote.callout p {
 
 .btn-download:hover { background: #F9FAFB; }
 
-
-/* ── Software tier badges ───────────────── */
-.badge-scan    { background: var(--hp-light); color: var(--hp-dark); }
-.badge-premium { background: #EDE9FE; color: #5B21B6; }
 
 /* ── Software section banner ─────────────── */
 .sw-section-banner {
@@ -534,6 +599,59 @@ blockquote.callout p {
   margin: 0;
 }
 
+/* ── Software compatibility tiers ────────── */
+.compat-tiers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 32px;
+}
+
+.compat-tier-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+}
+
+.compat-tier-card.is-premium { border-color: rgba(91,33,182,0.25); }
+
+.compat-tier-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-1);
+}
+
+.compat-tier-hint {
+  font-size: 12px;
+  color: var(--text-4);
+  margin-top: 2px;
+  margin-bottom: 14px;
+}
+
+.compat-tier-includes {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.compat-tier-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--hp-dark);
+  background: var(--hp-light);
+  border-radius: 6px;
+  padding: 6px 10px;
+  width: fit-content;
+}
+
+.compat-tier-chip i { color: var(--hp-blue); }
+
+.compat-tier-chip.is-premium { background: #EDE9FE; color: #5B21B6; }
+.compat-tier-chip.is-premium i { color: #5B21B6; }
+
 /* ── Feature block ───────────────────────── */
 .feature-block {
   margin: 36px 0 0;
@@ -565,6 +683,14 @@ blockquote.callout p {
   width: 100%;
   height: 100%;
   border: none;
+}
+
+.video-embed video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .video-embed-placeholder {
@@ -693,6 +819,53 @@ blockquote.callout p {
 
 .mobile-menu-btn:hover { background: #F3F4F6; }
 
+
+/* ── Product Line Intro ──────────────────── */
+.line-intro {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0 32px;
+}
+
+.line-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+}
+
+.line-card.is-premium { border-color: rgba(91,33,182,0.25); }
+
+.line-card-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-1);
+  margin-bottom: 6px;
+}
+
+.line-card-desc {
+  font-size: 13px;
+  color: var(--text-3);
+  line-height: 1.6;
+  margin-bottom: 14px;
+}
+
+.line-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.line-tag {
+  font-size: 12px;
+  font-weight: 500;
+  color: var(--hp-dark);
+  background: var(--hp-light);
+  border-radius: 6px;
+  padding: 4px 9px;
+}
+
+.line-tag.is-premium { background: #EDE9FE; color: #5B21B6; }
 
 /* ── Product Grid ────────────────────────── */
 .product-section-label {
@@ -855,4 +1028,8 @@ blockquote.callout p {
   .article-subtitle { font-size: 16px; margin-bottom: 28px; }
   h2.section-heading { font-size: 19px; margin-top: 36px; }
   p.body-text, ul.body-list li { font-size: 15px; }
+
+  .compat-tiers { grid-template-columns: 1fr; }
+  .line-intro { grid-template-columns: 1fr; }
+  .article-img.is-circle { width: 160px; height: 160px; }
 }
