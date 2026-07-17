@@ -79,7 +79,10 @@ function initFeatureAccordion() {
       const isOpen = item.classList.contains('open');
       // Close all others in same accordion
       const siblings = item.closest('.feature-accordion').querySelectorAll('.feature-item');
-      siblings.forEach(s => s.classList.remove('open'));
+      siblings.forEach(s => {
+        s.classList.remove('open');
+        s.querySelectorAll('video').forEach(v => v.pause());
+      });
       // Toggle clicked
       if (!isOpen) item.classList.add('open');
     });
