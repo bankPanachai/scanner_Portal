@@ -1,7 +1,7 @@
 <p class="article-title">การนำ HP Scanner Solution ไปประยุกต์ใช้ในแต่ละองค์กร</p>
 <p class="article-subtitle">ในปัจจุบัน แต่ละองค์กรต่างมีระบบหลังบ้าน (Backend System) ที่ใช้บริหารจัดการธุรกิจของตัวเองอยู่แล้ว ไม่ว่าจะเป็นระบบ ERP, บัญชี, HIS ของโรงพยาบาล หรือระบบที่พัฒนาขึ้นเอง (In-house) ดังนั้น หน้าที่ของสแกนเนอร์และซอฟต์แวร์โซลูชัน คือการทำหน้าที่เป็น "สะพานเชื่อม" ที่แปลงเอกสารกระดาษให้กลายเป็นข้อมูลดิจิทัล เพื่อนำไปป้อนเข้าสู่ระบบหลังบ้านเหล่านั้นโดยอัตโนมัติ โดยที่พนักงานไม่จำเป็นต้องนั่งคีย์ข้อมูลด้วยมืออีกต่อไป</p>
 
-<img class="article-img" src="assets/images/img12.png" alt="Workflow: Document to Scanner to E-Document to Digital Workflow">
+<img loading="lazy" decoding="async" class="article-img" src="assets/images/img12.jpg" alt="Workflow: Document to Scanner to E-Document to Digital Workflow">
 <p class="img-caption">เปลี่ยนกระดาษให้เป็นข้อมูลดิจิทัล พร้อมส่งเข้าระบบหลังบ้านอัตโนมัติ</p>
 
 <hr class="article-divider">
@@ -20,8 +20,8 @@
 </ul>
 
 <div class="img-slideshow">
-  <img class="slide is-active" src="assets/images/img13.jpg" alt="ระบบ OCR ตรวจจับและดึงเลข HN Number จากแบบฟอร์มลงทะเบียนผู้ป่วย">
-  <img class="slide" src="assets/images/img14.png" alt="ไฟล์ถูกตั้งชื่ออัตโนมัติเป็น HN_67-123456.pdf">
+  <img loading="lazy" decoding="async" class="slide is-active" src="assets/images/img13.jpg" alt="ระบบ OCR ตรวจจับและดึงเลข HN Number จากแบบฟอร์มลงทะเบียนผู้ป่วย">
+  <img loading="lazy" decoding="async" class="slide" src="assets/images/img14.png" alt="ไฟล์ถูกตั้งชื่ออัตโนมัติเป็น HN_67-123456.pdf">
   <div class="slideshow-dots">
     <span class="dot is-active"></span>
     <span class="dot"></span>
@@ -35,7 +35,7 @@
   <li><strong class="highlight">4. เรียกใช้งานและสืบค้น (Instant Retrieval)</strong> — เมื่อแพทย์หรือเจ้าหน้าที่พิมพ์ค้นหาเลข HN ในระบบ HIS เอกสารสแกนก็จะปรากฏขึ้นบนหน้าจอของโรงพยาบาลทันที</li>
 </ul>
 
-<img class="article-img" src="assets/images/img15.jpg" alt="ไฟล์ HN_67-123456.pdf ถูก Auto-Filing เข้าระบบ HIS และเรียกดูได้ทันทีที่ Clinician Station">
+<img loading="lazy" decoding="async" class="article-img" src="assets/images/img15.jpg" alt="ไฟล์ HN_67-123456.pdf ถูก Auto-Filing เข้าระบบ HIS และเรียกดูได้ทันทีที่ Clinician Station">
 <p class="img-caption">ไฟล์เข้าระบบ HIS อัตโนมัติ พร้อมให้ค้นหาและเรียกดูได้ทันที</p>
 
 <h2 class="section-heading">2. การตั้งชื่อไฟล์ด้วยค่าของ Barcode หรือ QR Code เพื่อใช้กับระบบจัดการเอกสาร</h2>
@@ -46,13 +46,13 @@
 <h3 class="sub-heading">หน้าที่ของ HP Scanner & Software</h3>
 <ul class="body-list">
   <li><strong class="highlight">1. สแกนและดึงข้อมูล (Scan & OCR)</strong> — ใช้ Software HP Scan ในการสแกนเอกสาร เพื่อทำ OCR ดึงข้อมูลค่าของ QR Code หรือ Barcode</li>
-  <li><strong class="highlight">2. เปลี่ยนชื่อไฟล์ (Auto-Naming)</strong> — นำค่าที่ดึงได้จาก Barcode หรือ QR Code มาตั้งเป็นชื่อไฟล์เอกสารให้ทันที เช่น Invoice_102.pdf จากนั้นส่งไฟล์นี้ไปยังโฟลเดอร์ที่กำหนดไว้</li>
+  <li><strong class="highlight">2. เปลี่ยนชื่อไฟล์ (Auto-Naming)</strong> — นำค่าที่ดึงได้จาก Barcode หรือ QR Code มาตั้งเป็นชื่อไฟล์เอกสารให้ทันที เช่น Invoice-123456.pdf จากนั้นส่งไฟล์นี้ไปยังโฟลเดอร์ที่กำหนดไว้</li>
 </ul>
 
 <div class="img-slideshow">
-  <img class="slide is-active" src="assets/images/img16.jpg" alt="ใบแจ้งหนี้ต้นฉบับพร้อม Barcode ก่อนสแกน">
-  <img class="slide" src="assets/images/img17.jpg" alt="HP Scan เลือก Zone และอ่านค่า Barcode ได้เป็น INV-123456">
-  <img class="slide" src="assets/images/img18.jpg" alt="ไฟล์ถูกตั้งชื่ออัตโนมัติเป็น INV-102456.pdf">
+  <img loading="lazy" decoding="async" class="slide is-active" src="assets/images/img16.jpg" alt="ใบแจ้งหนี้ต้นฉบับพร้อม Barcode ก่อนสแกน">
+  <img loading="lazy" decoding="async" class="slide" src="assets/images/img17.jpg" alt="HP Scan เลือก Zone และอ่านค่า Barcode ได้เป็น INV-123456">
+  <img loading="lazy" decoding="async" class="slide" src="assets/images/img18.jpg" alt="ไฟล์ถูกตั้งชื่ออัตโนมัติเป็น INV-102456.pdf">
   <div class="slideshow-dots">
     <span class="dot is-active"></span>
     <span class="dot"></span>
@@ -67,5 +67,5 @@
   <li><strong class="highlight">4. เรียกใช้งานและสืบค้น (Instant Retrieval)</strong> — เมื่อพนักงานต้องการเรียกดูเอกสาร สามารถพิมพ์ค้นหาจากชื่อไฟล์ในระบบ DMS เพื่อเปิดไฟล์ขึ้นมาใช้งานได้ทันที</li>
 </ul>
 
-<img class="article-img" src="assets/images/img19.jpg" alt="ระบบ DMS คัดแยกไฟล์เข้าหมวดหมู่อัตโนมัติ และพนักงานค้นหาเรียกดูเอกสารได้ทันที">
+<img loading="lazy" decoding="async" class="article-img" src="assets/images/img19.jpg" alt="ระบบ DMS คัดแยกไฟล์เข้าหมวดหมู่อัตโนมัติ และพนักงานค้นหาเรียกดูเอกสารได้ทันที">
 <p class="img-caption">ไฟล์ถูกคัดแยกเข้าหมวดหมู่อัตโนมัติ พร้อมให้พนักงานค้นหาและเปิดใช้งานได้ทันที</p>

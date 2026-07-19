@@ -9,6 +9,7 @@ const pageTitles = {
 };
 
 let slideshowIntervals = [];
+const pageCache = {};
 
 async function loadPage(page) {
   const area = document.getElementById('content-area');
@@ -16,15 +17,21 @@ async function loadPage(page) {
   slideshowIntervals.forEach(clearInterval);
   slideshowIntervals = [];
 
-  try {
-    const res = await fetch(`content/${page}.html`);
-    if (!res.ok) throw new Error();
-    area.innerHTML = await res.text();
-  } catch {
-    area.innerHTML = `
-      <p class="article-title">${pageTitles[page]}</p>
-      <p class="article-subtitle">เนื้อหากำลังจัดทำ...</p>
-    `;
+  if (pageCache[page]) {
+    area.innerHTML = pageCache[page];
+  } else {
+    try {
+      const res = await fetch(`content/${page}.html`);
+      if (!res.ok) throw new Error();
+      const html = await res.text();
+      pageCache[page] = html;
+      area.innerHTML = html;
+    } catch {
+      area.innerHTML = `
+        <p class="article-title">${pageTitles[page]}</p>
+        <p class="article-subtitle">เนื้อหากำลังจัดทำ...</p>
+      `;
+    }
   }
 
   // Update active nav

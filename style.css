@@ -1,6 +1,10 @@
 /* ── Reset & Base ───────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
+/* Prevent iOS Safari from auto-inflating small text, which can push
+   absolutely-positioned labels (e.g. product-tier-badge) past their box */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
 :root {
   --hp-blue:    #0096D6;
   --hp-dark:    #005F8A;
@@ -64,6 +68,8 @@ aside#sidebar {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-1);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .sidebar-logo i {
@@ -803,6 +809,8 @@ blockquote.callout p {
   font-size: 14px;
   font-weight: 600;
   color: var(--text-1);
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .mobile-bar-logo i { color: var(--hp-blue); font-size: 18px; }
@@ -811,7 +819,11 @@ blockquote.callout p {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px 8px;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   font-size: 20px;
   color: var(--text-2);
   border-radius: 6px;
@@ -898,6 +910,9 @@ blockquote.callout p {
 }
 
 .product-card-img {
+  position: relative;
+  width: 100%;
+  min-width: 0;
   background: #FFFFFF;
   aspect-ratio: 16/9;
   display: flex;
@@ -906,6 +921,20 @@ blockquote.callout p {
   padding: 16px;
   border-bottom: 1px solid var(--border);
 }
+
+.product-tier-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 9px;
+  border-radius: 6px;
+  color: var(--hp-dark);
+  background: var(--hp-light);
+}
+
+.product-tier-badge.is-premium { background: #EDE9FE; color: #5B21B6; }
 
 .product-card-img img {
   max-width: 100%;
@@ -1027,9 +1056,17 @@ blockquote.callout p {
   .article-title { font-size: 24px; }
   .article-subtitle { font-size: 16px; margin-bottom: 28px; }
   h2.section-heading { font-size: 19px; margin-top: 36px; }
-  p.body-text, ul.body-list li { font-size: 15px; }
+  p.body-text, ul.body-list li { font-size: 16px; }
 
   .compat-tiers { grid-template-columns: 1fr; }
   .line-intro { grid-template-columns: 1fr; }
   .article-img.is-circle { width: 160px; height: 160px; }
+
+  /* Larger tap targets on touch devices (min 44px per WCAG 2.5.5 / Apple HIG) */
+  .nav-item { padding: 13px 12px; }
+  .btn-dl { padding: 14px 7px; }
+
+  /* Slightly larger labels for legibility at arm's length */
+  .product-tier-badge { font-size: 12px; padding: 4px 10px; }
+  .product-card-name { font-size: 14px; }
 }

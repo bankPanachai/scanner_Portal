@@ -6,6 +6,7 @@
   <title>HP ScanJet Product</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
   <link rel="stylesheet" href="style.css">
@@ -17,10 +18,10 @@
 
   <!-- Mobile top bar -->
   <div class="mobile-bar">
-    <div class="mobile-bar-logo">
+    <a class="mobile-bar-logo" href="#" onclick="event.preventDefault(); loadPage('why-scanner');">
       <i class="ti ti-scan"></i>
       HP ScanJet Product
-    </div>
+    </a>
     <button class="mobile-menu-btn" onclick="openSidebar()">
       <i class="ti ti-menu-2"></i>
     </button>
@@ -31,10 +32,10 @@
     <!-- Sidebar -->
     <aside id="sidebar">
       <div class="sidebar-header">
-        <div class="sidebar-logo">
+        <a class="sidebar-logo" href="#" onclick="event.preventDefault(); loadPage('why-scanner');">
           <i class="ti ti-scan"></i>
           HP ScanJet Solution
-        </div>
+        </a>
       </div>
 
       <nav class="sidebar-nav">
