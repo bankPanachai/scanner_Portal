@@ -913,6 +913,7 @@ blockquote.callout p {
   position: relative;
   width: 100%;
   min-width: 0;
+  min-height: 0;
   background: #FFFFFF;
   aspect-ratio: 16/9;
   display: flex;
@@ -920,6 +921,7 @@ blockquote.callout p {
   justify-content: center;
   padding: 16px;
   border-bottom: 1px solid var(--border);
+  overflow: hidden;
 }
 
 .product-tier-badge {
